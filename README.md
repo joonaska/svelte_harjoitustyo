@@ -6,7 +6,7 @@ Oiva hauskuutin koti-iltoihin tai illanistujaisten tylsään hetkeen. Painat vai
 
 ## Ulkoiset materiaalit
 
-Chuck Norri's API:
+Chuck Norris API:
 
 https://rapidapi.com/matchilling/api/chuck-norris/
 
