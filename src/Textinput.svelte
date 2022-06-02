@@ -7,7 +7,8 @@
   export let label;
   export let cols = 30;
   export let rows = 10;
-  export let maxlength = 100;
+  export let maxlength = 10;
+  export let minlength = 5;
   export let errmsg;
   export let valid;
 
@@ -43,6 +44,7 @@
       {id}
       on:input={changeValue}
       {maxlength}
+      {minlength}
       on:blur={() => (firstVisit = false)}
       class:inputerror={errmsg && !valid && !firstVisit}
     />

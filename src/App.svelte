@@ -15,7 +15,7 @@
   // login "tietokanta"
   const logIn = {
     kayttaja: 'Testi',
-    passu: 'Testi',
+    passu: 'Test1',
   };
 
   // oikeuksia apin käyttöön.

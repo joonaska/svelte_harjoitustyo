@@ -22,14 +22,24 @@
   let kayttajatunnus = '';
   let salasana = '';
   // validoidaan syötettä
-  function onkovalidiSyote(teksti) {
-    // syötteen pitää olla vähintään viisi merkkiä
-    return teksti.trim().length >= 5;
+
+  function onkovalidiKayttajatunnus(syote) {
+    return (
+      syote.trim().length >= 5 && /[a-z]/.test(syote) && /[A-Z]/.test(syote)
+    );
+  }
+  function onkovalidiSalasana(syote) {
+    return (
+      syote.trim().length >= 5 &&
+      /[0-9]/.test(syote) &&
+      /[a-z]/.test(syote) &&
+      /[A-Z]/.test(syote)
+    );
   }
 
   // reaktiivinen deklaraatio haistelee syötettä
-  $: validiKayttajaTunnus = onkovalidiSyote(kayttajatunnus);
-  $: validiSalasana = onkovalidiSyote(salasana);
+  $: validiKayttajaTunnus = onkovalidiKayttajatunnus(kayttajatunnus);
+  $: validiSalasana = onkovalidiSalasana(salasana);
 
   $: validiKirjautuminen = validiKayttajaTunnus && validiSalasana;
 </script>
@@ -52,7 +62,9 @@
       id="kayttajatunnus"
       on:input={(e) => (salasana = e.target.value)}
       valid={validiKayttajaTunnus}
-      errmsg="Käyttäjätunnus on pakollinen"
+      errmsg="Käyttäjätunnus on vähintään 5 merkkiä, isoja ja pieniä kirjaimia"
+      maxlength="20"
+      minlength="5"
     />
     <Textinput
       type="password"
@@ -61,7 +73,9 @@
       id="salasana"
       on:input={(e) => (salasana = e.target.value)}
       valid={validiSalasana}
-      errmsg="Salasana on pakollinen"
+      errmsg="Salasana on pakollinen vähintään 5 merkkiä, isoja ja pieniä kirjaimia, numeroita"
+      maxlength="20"
+      minlength="5"
     />
     <div>
       <slot name="footer" />
