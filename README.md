@@ -1,13 +1,13 @@
----
+
 
 # Chuck Norris vitsigeneraattori
 
 Oiva hauskuutin koti-iltoihin tai illanistujaisten tylsään hetkeen. Painat vain shufflea ja uusi Chuck Norris aiheinen vitsi ilmestyy ruudulle. Halutessasi, voit parhaat vitsit tallentaa suosikkeihin.
-```
+
   Testitunnukset: 
   Käyttäjätunnus: Testi
   Salasana: Test1
-```
+
 ## Ulkoiset materiaalit
 
 Chuck Norris API:
@@ -22,4 +22,4 @@ CSS-generator:
 
 https://html-css-js.com/css/generator/
 
----
+
